@@ -1,0 +1,30 @@
+/* Tutorial overlay */
+#tut {
+  position: fixed; inset: 0; background: rgba(20, 14, 8, .85);
+  display: none; align-items: center; justify-content: center; z-index: 20;
+  padding: 12px;
+  padding-top: calc(12px + env(safe-area-inset-top, 0px));
+  padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+}
+#tut.on { display: flex; }
+
+.tc { background: var(--panel); color: var(--ink); border-radius: 14px; padding: 16px; width: min(94vw, 400px); }
+.tc h3 { margin: 0 0 10px; font-size: 20px; }
+.tc p { margin: 12px 0; font-size: 15px; }
+.tc .row { margin-top: 0; }
+.tc .row button { flex: 1; }
+
+/* Mini 5x5 demo board */
+.mb {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  border: 3px solid var(--d); border-radius: 8px; overflow: hidden;
+  container-type: inline-size;
+}
+.mc { aspect-ratio: 1; display: grid; place-items: center; position: relative; }
+.mc.l { background: var(--l); }
+.mc.d { background: var(--d); }
+.mc .g { font-size: 14cqw; }
+
+.dots { display: flex; gap: 6px; justify-content: center; margin-bottom: 10px; }
+.dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--l); border: 1px solid var(--d); }
+.dots i.on { background: var(--acc); border-color: var(--acc); }
